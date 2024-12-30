@@ -1,3 +1,8 @@
+import { Header, Hero } from "@/sections";
+
 export default function Home() {
-  return <div>Hello world</div>;
+  return <>
+  <Header/>
+  <Hero/>
+  </>;
 }

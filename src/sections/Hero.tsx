@@ -2,7 +2,8 @@ import { Button } from "@/components";
 import Stars from '@/assets/stars.png'
 
 export const Hero = () => {
-  return <section className="h-[600px] lg:h-[650px] flex items-center relative [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_95%,transparent)] lg:-mt-10 overflow-hidden" style={{
+  return (
+  <section className="h-[600px] lg:h-[650px] flex items-center relative [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_95%,transparent)] lg:-mt-10 overflow-hidden" style={{
     backgroundImage : `url(${Stars.src})`
   }}>
     <div className="absolute inset-0 bg-[radial-gradient(75%_75%_at_center_center,rgb(140,69,255,.5)_15%,rgb(14,0,36,.5)_78%,transparent)]"></div>
@@ -37,5 +38,6 @@ export const Hero = () => {
       <Button className='md:py-2.5 md:px-5 md:text-base'>Join waitlist</Button>
       </div>
     </div>
-  </section>;
+  </section>
+  );
 };

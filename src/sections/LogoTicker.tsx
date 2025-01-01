@@ -6,7 +6,8 @@ import pulseLogo from '@/assets/logo-pulse.png';
 import echoLogo from '@/assets/logo-echo.png';
 
 export const LogoTicker = () => {
-  return <section className='py-20 md:py-24'>
+  return (
+  <section className='py-20 md:py-24'>
     <div className="container">
       <div className='flex gap-5 items-center'>
         <div className='flex-1 md:flex-none'>
@@ -21,5 +22,6 @@ export const LogoTicker = () => {
       </div>
       </div>
     </div>
-  </section>;
+  </section>
+  );
 };

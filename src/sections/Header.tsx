@@ -13,7 +13,8 @@ export const Header = () => {
     setIsSidebarOpen(prevState => !prevState);
   };
 
-  return <header className='border-b sticky top-0 border-white/15 z-10 px-2 py-4 md:border-none transition-all backdrop-blur md:backdrop-blur-none'>
+  return (
+  <header className='border-b sticky top-0 border-white/15 z-10 px-2 py-4 md:border-none transition-all backdrop-blur md:backdrop-blur-none'>
     {/* Centered part */}
     <div className="container flex justify-between items-center md:border md:border-white/15 md:p-2.5 md:rounded-xl max-w-2xl mx-auto md:backdrop-blur">
         <div className="border border-white/15 md:border-white/10 w-10 h-10 rounded-lg inline-flex justify-center items-center">
@@ -51,5 +52,6 @@ export const Header = () => {
         </div>
         </div>
       )}
-  </header>;
+  </header>
+  );
 };

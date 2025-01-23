@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+::selection {
+  color: rgb(74,32,138);
+  background-color: white;
+}
+
 img {
   pointer-events: none;
 }

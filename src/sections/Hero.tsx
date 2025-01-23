@@ -1,6 +1,6 @@
 "use client"
 
-import { motion, useMotionValueEvent, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { Button } from "@/components";
 import Stars from '@/assets/stars.png';
 import { useRef } from "react";

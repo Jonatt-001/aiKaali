@@ -1,3 +1,6 @@
+"use client"
+
+import { motion } from "framer-motion";
 import avatar1 from "@/assets/avatar-1.png";
 import avatar2 from "@/assets/avatar-2.png";
 import avatar3 from "@/assets/avatar-3.png";
@@ -39,11 +42,19 @@ export const Testimonials = () => {
         <p className="text-white/70 max-w-sm mx-auto text-lg md:text-xl text-center mt-5 tracking-tight">
           Our revolutionary AI SEO tools have transformed our client's strategies.
         </p>
-        <div className="overflow-hidden mt-10 [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]">
-          <div className="flex gap-5">
+        <div className="flex overflow-hidden mt-10 [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]">
+          <motion.div 
+          initial = {{ translateX : "-50%" }}
+          animate = {{ translateX : "0"}}
+          transition = {{ 
+            repeat : Infinity,
+            duration : 30,
+            ease : "linear"
+          }}
+          className="flex flex-none gap-5 pr-5">
             {
-              testimonials.map(testimonial => (
-                <div key={testimonial.name} className="border border-white/15 p-6 rounded-xl bg-[linear-gradient(to_bottom_left,rgb(140,69,255,.3),black)] max-w-xs md:max-w-md flex-none">
+              [...testimonials, ...testimonials].map((testimonial,index) => (
+                <div key={testimonial.name + index} className="border border-white/15 p-6 rounded-xl bg-[linear-gradient(to_bottom_left,rgb(140,69,255,.3),black)] max-w-xs md:max-w-md flex-none">
                   <div className="text-lg md:text-2xl tracking-tight">{testimonial.text}</div>
                   <div className="flex items-center gap-3 mt-5">
                     <div className="relative after:rounded-lg after:contents-[''] after:absolute after:inset-0 after:bg-[rgb(140,69,255)] after:mix-blend-soft-light before:contents-[''] before:absolute before:border before:inset-0 before:z-10 before:rounded-lg before:border-white/30 ">
@@ -57,7 +68,7 @@ export const Testimonials = () => {
                 </div>
               ))
             }
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

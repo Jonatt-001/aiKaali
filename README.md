@@ -16,10 +16,10 @@ Welcome to **AIvista**, a stunning, modern **landing page** that showcases the f
 
 ## 📸 **Sneak Peek**  
 ![Hero section](https://github.com/user-attachments/assets/17ed1b7a-fe89-4141-8432-716a656cfbb0)
-![Call to action section](https://github.com/user-attachments/assets/c7a42d5e-7210-47b0-bcef-8aaa55a25717)
+<!--![Call to action section](https://github.com/user-attachments/assets/c7a42d5e-7210-47b0-bcef-8aaa55a25717)-->
 
 
 ### 🌍 **Live Demo** : [Check out AIvista in action!](https://aivista.netlify.app/)  🚀
 
->### 🌟 Built with love, gradients, and animations 🪄.  
+> 🌟 Built with love, gradients, and animations 🪄.  
 >_**AIvista** – because even a landing page deserves to be extraordinary._  

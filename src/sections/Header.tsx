@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Logo from '@/assets/logo.svg';
 import Menu from '@/assets/icon-menu.svg';
 import { Button } from '@/components';
+import { motion,AnimatePresence } from 'framer-motion';
 
 export const Header = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -34,24 +35,38 @@ export const Header = () => {
         </div>
     </div>
     {/* Sidebar */}
+    <AnimatePresence>
     {isSidebarOpen && (
-        <div className='md:hidden absolute w-[98%] h-[550px] transparent' onClick={toggleSidebar}>
-          <div className='md:hidden fixed top-0 right-0 h-full px-14 bg-black/80 text-white p-8 shadow-lg z-20' onClick={(e:React.MouseEvent)=> e.stopPropagation()}>
-          <nav className='flex flex-col gap-5 text-sm'>
-            <a href="#" className='text-white/70 hover:text-white transition'>Features</a>
-            <a href="#" className='text-white/70 hover:text-white transition'>Developers</a>
-            <a href="#" className='text-white/70 hover:text-white transition'>Pricing</a>
-            <a href="#" className='text-white/70 hover:text-white transition'>Changelog</a>
-          </nav>
-          <button
-            onClick={toggleSidebar}
-            className="absolute top-4 right-4 text-white text-2xl z-100"
-          >
-            &times; {/* Close button */}
-          </button>
-        </div>
-        </div>
+        <div className='md:hidden -mt-14 absolute w-[98%] h-[550px] transparent' onClick={toggleSidebar}>
+            <motion.div className='md:hidden fixed top-0 right-0 h-screen px-14  border-l border-white/15 text-white p-8 shadow-lg z-20' onClick={(e:React.MouseEvent)=> e.stopPropagation()}
+              initial={{ x: "100%" }}
+              animate={{ x: "0%" }}
+              exit={{ x: "100%" }}
+              transition={{ duration: 0.5, ease: "easeInOut" }} 
+            >
+           <motion.div className="fixed inset-0 bg-black/30 backdrop-blur-md -z-10"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.5, ease: "easeInOut" }}
+          />
+            <nav className='flex flex-col gap-5 text-sm'>
+              <a href="#" className='text-white/70 hover:text-white transition'>Features</a>
+              <a href="#" className='text-white/70 hover:text-white transition'>Developers</a>
+              <a href="#" className='text-white/70 hover:text-white transition'>Pricing</a>
+              <a href="#" className='text-white/70 hover:text-white transition'>Changelog</a>
+              <Button>Join waitlist</Button>
+            </nav>
+            <button
+              onClick={toggleSidebar}
+              className="absolute top-4 right-4 text-white text-2xl z-100"
+            >
+              &times; {/* Close button */}
+            </button>
+          </motion.div>
+          </div>
       )}
+    </AnimatePresence>
   </header>
   );
 };

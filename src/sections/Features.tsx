@@ -70,7 +70,7 @@ export const FeaturesTab: React.FC<{ tab: Tab, isSelected : Boolean } & React.Co
     animate(xPercentage, [0, 100, 100, 0, 0], options);
     animate(yPercentage, [0, 0, 100, 100, 0], options);
 
-  },[isSelected])
+  },[isSelected,xPercentage,yPercentage])
 
   const handleTabHover = () => {
     if (DotLottiePlayerRef.current === null) return;
@@ -97,7 +97,7 @@ export const FeaturesTab: React.FC<{ tab: Tab, isSelected : Boolean } & React.Co
 }
 
 export const Features = () => {
-  const [selectedTab, useSelectedTab] = useState(0);
+  const [selectedTab, setSelectedTab] = useState(0);
 
   const backgroundPositionX = useMotionValue(tabs[0].backgroundPositionX);
   const backgroundPositionY = useMotionValue(tabs[0].backgroundPositionY);
@@ -107,7 +107,7 @@ export const Features = () => {
   const backgroundSize = useMotionTemplate `${backgroundSizeX}% auto`;
 
   const handleSelectedTab = (index : number) => {
-    useSelectedTab(index);
+    setSelectedTab(index);
 
     const animateOptions: ValueAnimationTransition = {
       duration : 2,
